@@ -1,27 +1,31 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple & Red Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #2d033b;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<header class="bg-red-600 p-4 text-center text-white text-xl font-bold rounded-b-lg shadow-lg">
+    My Purple & Red Website
+</header>
 
-namespace Laurensvidan\WebtCoreComposerForPhpProjects;
-require '..\vendor/autoload.php';
+<main class="p-6 text-center">
+    <form action="code-generator.php" method="post">
+        <input type="text" placeholder="Gib Numma puppe"><br>
+        <input type="submit">
+    </form>
+</main>
 
-use Endroid\QrCode\Builder\Builder;
-use Endroid\QrCode\Encoding\Encoding;
-use Endroid\QrCode\ErrorCorrectionLevel;
-use Endroid\QrCode\RoundBlockSizeMode;
-use Endroid\QrCode\Writer\PngWriter;
-
-$builder = new Builder(
-    writer: new PngWriter(),
-    writerOptions: [],
-    validateResult: false,
-    data: '+43 1 22 33 444',
-    encoding: new Encoding('UTF-8'),
-    errorCorrectionLevel: ErrorCorrectionLevel::High,
-    size: 300,
-    margin: 10,
-    roundBlockSizeMode: RoundBlockSizeMode::Margin
-);
-
-$result = $builder->build();
-
-header('Content-Type: '.$result->getMimeType());
-echo $result->getString();
+<footer class="bg-red-600 p-3 text-center text-white mt-6 rounded-t-lg shadow-lg">
+    &copy; 2025 My Website. All rights reserved.
+</footer>
+</body>
+</html>
