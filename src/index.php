@@ -13,7 +13,7 @@ $builder = new Builder(
     writer: new PngWriter(),
     writerOptions: [],
     validateResult: false,
-    data: 'Custom QR code contents',
+    data: '+43 1 22 33 444',
     encoding: new Encoding('UTF-8'),
     errorCorrectionLevel: ErrorCorrectionLevel::High,
     size: 300,
@@ -22,3 +22,6 @@ $builder = new Builder(
 );
 
 $result = $builder->build();
+
+header('Content-Type: '.$result->getMimeType());
+echo $result->getString();
