@@ -1,0 +1,19 @@
+{
+    "name": "laurensvidan/webt-core-composer-for-php-projects",
+    "description": "package from laurens",
+    "type": "project",
+    "require": {
+        "endroid/qr-code": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Laurensvidan\\WebtCoreComposerForPhpProjects\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "IHateSEW",
+            "email": "168427476+IHateSEW@users.noreply.github.com"
+        }
+    ]
+}
