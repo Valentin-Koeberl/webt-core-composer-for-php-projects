@@ -1,9 +1,6 @@
 <?php
 
 require_once '../vendor/autoload.php';
-require_once '../src/code-generator.php';
-
-use Laurensvidan\WebtCoreComposerForPhpProjects\QrCodeGenerator;
 
 use Endroid\QrCode\Builder\Builder;
 use Endroid\QrCode\Encoding\Encoding;
@@ -18,10 +15,6 @@ $phoneNumber = "+43 1 22 33 444";
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["phone_number"])) {
     $phoneNumber = $_POST["phone_number"];
 }
-
-// Generate QR Code
-
-
 
 $builder = new Builder(
     writer: new PngWriter(),
